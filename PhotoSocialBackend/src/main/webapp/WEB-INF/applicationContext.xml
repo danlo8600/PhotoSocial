@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+  Copyright (C) 2016 Marchegiano Danilo
+ 
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2.1
+  of the License, or (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+
+<!-- From Spring docs: Central interface to provide configuration for an application. 
+     This is read-only while the application is running, but may be 
+     reloaded if the implementation supports this.
+     http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationContext.html
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <!-- *************************** -->
+    <!-- *** PER SPRING SECURITY *** -->
+    <!--<global-method-security pre-post-annotations="enabled"/>-->
+    <!-- *************************** -->
+    
+    <!-- Create bean for Hibernate Session Factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="packagesToScan" value="d4n1x.photosocial.domain"/>
+        <property name="dataSource" ref="dataSource" />
+        <!--<property name="annotatedClasses">
+            <list>
+                <value>d4n1x.photosocial.domain.User</value>
+                <value>d4n1x.photosocial.domain.Role</value>
+                <value>d4n1x.photosocial.domain.Photo</value>
+                <value>d4n1x.photosocial.domain.Category</value>
+            </list>
+        </property>-->
+        <!-- Define property for hibernate -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- Define been for data source of hibernate -->
+    <bean id="dataSource"
+              class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+              p:driverClassName="${jdbc.driverClassName}"
+              p:url="${jdbc.url}"
+              p:username="${jdbc.username}"
+              p:password="${jdbc.password}"/>
+    
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="/WEB-INF/jdbc.properties" />
+    
+    <!-- CUSTOM BEANS -->
+    <!-- USER -->
+    <!-- id="alias for refer to this been" class="destination class of been" -->
+    <bean id="UserDAO"  class="d4n1x.photosocial.DAO.impl.UserDAOImpl">
+        <property name="factory" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="UserBO" class="d4n1x.photosocial.BO.impl.UserBOImpl">
+         <property name="userDAO" ref="UserDAO" />
+    </bean>
+    
+    <!-- ROLE -->
+   <bean id="RoleDAO"  class="d4n1x.photosocial.DAO.impl.RoleDAOImpl">
+        <property name="factory" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="RoleBO" class="d4n1x.photosocial.BO.impl.RoleBOImpl">
+         <property name="roleDAO" ref="RoleDAO" />
+    </bean>
+    
+    <!-- PHOTO -->
+    <bean id="PhotoDAO"  class="d4n1x.photosocial.DAO.impl.PhotoDAOImpl">
+        <property name="factory" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="PhotoBO" class="d4n1x.photosocial.BO.impl.PhotoBOImpl">
+         <property name="photoDAO" ref="PhotoDAO" />
+    </bean>
+    
+    <!-- CATEGORY -->
+    <bean id="CategoryDAO"  class="d4n1x.photosocial.DAO.impl.CategoryDAOImpl">
+        <property name="factory" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="CategoryBO" class="d4n1x.photosocial.BO.impl.CategoryBOImpl">
+         <property name="categoryDAO" ref="CategoryDAO" />
+    </bean>
+    
+    <!-- Encrypt Password -->
+    <bean id="passwordEncrypter" class="d4n1x.photosocial.utility.PasswordEncrypter" />
+</beans>

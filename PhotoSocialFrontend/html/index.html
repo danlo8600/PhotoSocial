@@ -1,0 +1,61 @@
+<html ng-app="routingApp">
+    <head>
+        <title>PhotoSocial</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="../bower_components/jQuery/dist/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- AngularJS -->
+        <script src="../bower_components/angular/angular.js"></script>
+        <!-- Angural-Route -->
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../js/route.js"></script>
+        <!-- AngularJS Controller -->
+        <script src="../js/home.js"></script>
+        <script src="../js/popular.js"></script>
+        <script src="../js/new.js"></script>
+        <script src="../js/upload.js"></script>
+        <script src="../js/registration.js"></script>
+        <script src="../js/login.js"></script>
+        <script src="../js/account.js"></script>
+        <script src="../js/admin.js"></script>
+        <script src="../js/categories.js"></script>
+        <!-- Masonry -->
+        <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top bar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Hamburger Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">PhotoSocial</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                        <li><a href="#popular"><span class="glyphicon glyphicon-camera"></span> Popular</a></li>
+                        <li><a href="#new"><span class="glyphicon glyphicon-picture"></span> New Entry</a></li>
+                        <li><a href="#admin"><span class="glyphicon glyphicon-eye-open"></span> Admin</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#upload"><span class="glyphicon glyphicon-cloud-upload"></span> Upload</a></li>
+                        <li><a href="#account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div ng-view>
+            <!-- Partial Page -->
+        </div>
+    </body>
+</html>

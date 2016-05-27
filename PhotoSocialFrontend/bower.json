@@ -1,0 +1,24 @@
+{
+  "name": "PhotoSocialFrontend",
+  "homepage": "https://github.com/danlo8600/PhotoSocial",
+  "authors": [
+    "Marchegiano Danilo <danlo8600@gmail.com>"
+  ],
+  "description": "Web Frontend for PhotoSocial",
+  "main": "index.html",
+  "license": "GPL 2.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jQuery": "^2.2.3",
+    "angular": "angularjs#^1.5.5",
+    "masonry": "^4.1.0",
+    "angular-route": "^1.5.5"
+  }
+}

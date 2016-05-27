@@ -1,0 +1,63 @@
+<!-- Account Form -->
+<div class="container" class="row">
+    <div class="col-xs-12 col-sm-3 col-lg-6">
+        <img src="../img/usr_def.jpg" class="img-circle img-responsive col-centered" id="usr_picture">
+        <form role="form" class="col-xs-12 col-sm-12 col-lg-6 col-centered">
+            <h4 id="reg_label">Select profile picture</h4>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" multiple>
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+            </div>
+        </form>
+    </div>
+    <form role="form" class="col-xs-12 col-sm-9 col-lg-6">
+        <div class="form-group" id="reg_form">
+            <label for="usr" id="reg_label">Name</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <label for="usr" id="reg_label">Surname</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="surname" placeholder="Enter your surname">
+            </div>
+            <label for="usr" id="reg_label">User Name</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="usr" placeholder="Enter your user name" disabled>
+            </div>
+            <label for="usr" id="reg_label">Password</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter new password">
+            </div>
+            <label for="usr" id="reg_label">Confirm Password</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="pwd_cont" placeholder="Reinsert new password">
+            </div>
+            <label for="usr" id="reg_label">Email</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="Enter new e-mail">
+            </div>
+            <label for="usr" id="reg_label">Language</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-flag" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="language" placeholder="Enter your language" disabled>
+            </div>
+            <label for="usr" id="reg_label">Country</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-globe" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="country" placeholder="Enter your country" disabled>
+            </div>
+            <input type="submit" class="btn btn-primary" id="reg_button" value="Save" />
+            <input type="submit" class="btn btn-danger" id="reg_button" value="Cancel" />
+        </div> 
+    </form>
+</div>

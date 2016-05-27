@@ -1,0 +1,23 @@
+    <link href="../css/mas_index.css" rel="stylesheet">
+    <div ng-cloak>
+        <div class="container ph_popular" ng-controller="ngPopCont">
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <label><a class="ph_pop_lab" href="#popular">Popular Photos</a></label>
+            </div>
+            <div class="grid col-xs-12 img col-sm-6 col-lg-4"
+                data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }' 
+                ng-repeat="p_photo in popular_photos track by $index">
+                    <img class="grid-item img-responsive" ng-src="{{p_photo.photo_file}}"/>
+            </div>
+        </div>
+        <div class="container ph_new" ng-controller="ngNewCont">
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <label><a class="ph_pop_lab" href="#new">New Photos</a></label>
+            </div>
+            <div class="grid col-xs-12 img col-sm-6 col-lg-4"
+                data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }' 
+                ng-repeat="n_photo in new_photos track by $index">
+                <img class="grid-item img-responsive" ng-src="{{n_photo.photo_file}}"/>
+            </div>
+        </div>
+    </div>

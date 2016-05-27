@@ -1,0 +1,15 @@
+#ph_row{
+    margin-top: 20px;
+}
+
+#ph_col{
+    margin-left: 50px;
+}
+
+#photo_description{
+    height: 200px;
+}
+
+textarea {
+   resize: none;
+}

@@ -1,0 +1,42 @@
+    <link href="../css/upload.css" rel="stylesheet">
+    <!-- Upload File -->
+    <script src="../js/show_upload_photo.js"></script>
+    <div>
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-lg-12" id="img_cont">
+                <img id="image" class="col-centered img-responsive" />
+            </div>
+            <form role="form" class="col-xs-12 col-sm-12 col-lg-5 col-centered">
+                <div class="form-group" id="reg_form">
+                    <h4 id="reg_label">Upload new photo</h4>
+                    <div class="input-group" id="div_button">
+                        <span class="input-group-btn">
+                            <span class="btn btn-primary btn-file">
+                                Browse&hellip; <input type="file" id="photo_upload"/>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group" id="reg_form">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" id="photo_name" placeholder="Enter photo name">
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-align-left" aria-hidden="true"></i></span>
+                        <textarea name="photo_description" class="form-control" id="photo_description"
+                                  cols="40" rows="5" placeholder="Enter photo description"></textarea>
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i></span>
+                        <select ng-controller="ngCategory" class="form-control">
+                            <option value="no_category" selected="true">Select Category</option>
+                            <option ng-repeat="category in categories" ng-value="{{category.category_name}}">{{category.category_name}}</option>
+                        </select>
+                    </div><br>
+                    <input type="submit" class="btn btn-primary" id="reg_button" value="Upload" />
+                    <input type="submit" class="btn btn-danger" id="reg_button" value="Cancel" />
+                </div> 
+            </form>
+        </div>
+    </div>

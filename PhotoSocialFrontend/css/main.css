@@ -1,0 +1,100 @@
+body{
+    background-color: #424242;
+    margin-top: 70px;
+}
+
+.navbar-inverse{
+    background-color: #2a2a2a;
+    border-color: #2a2a2a;
+    border-radius: 0px;
+}
+
+.ph_popular{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.ph_new{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.ph_pop_lab:link{
+    color: lightgray;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.ph_pop_lab:visited{
+    color: lightgray;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.ph_pop_lab:hover{
+    color: gray;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.img{
+    padding-bottom: 10px;
+}
+
+#reg_label{
+    color: lightgray;
+    margin-top: 10px;
+}
+
+#reg_button{
+    margin-top: 5%;
+    margin-right: 4.5%;
+    margin-left: 4.5%;
+    width: 40%;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+#usr_picture{
+    max-width: 50%;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.input-size{
+    max-width: 50%;
+    float: none;
+    margin: 0 auto;
+}
+
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}

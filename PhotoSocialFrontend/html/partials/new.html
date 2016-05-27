@@ -1,0 +1,19 @@
+    <link href="../css/new.css" rel="stylesheet">
+    <link href="../css/mas_pop_new.css" rel="stylesheet">
+    <div ng-cloak>
+        <div ng-controller="ngNew" class="container">
+            <div class="col-xs-12 col-sm-10 col-lg-10">
+                <div class="grid col-xs-12 img col-sm-6 col-lg-4"
+                     data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }' 
+                     ng-repeat="n_photo in new_photos">
+                    <img class="grid-item img-responsive" ng-src="{{n_photo.photo_file}}"/>
+                </div>
+            </div>
+            <nav ng-controller="ngCategory" class="col-xs-12 col-sm-2 col-lg-2 bk_new navbar navbar-default navbar-inverse">
+                <label id="sel_cat_lab">Select Category</label>
+                <ul class="list-inline" ng-repeat="category in categories">
+                    <li><a href="">{{category.category_name}}</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
